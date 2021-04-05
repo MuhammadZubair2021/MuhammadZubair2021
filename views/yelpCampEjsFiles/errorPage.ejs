@@ -1,0 +1,29 @@
+<%- include('../../yelpCamps/yelpCampPartials/head.ejs') %>
+<body>
+
+  <%- include('../../yelpCamps/yelpCampPartials/navbar.ejs') %>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template" style="padding: 40px 15px;text-align: center; font-size: 2rem;">
+                <h1 style="font-size: 3.5rem;">
+                    Oops!</h1>
+                <h2 style="font-size: 2.5rem;"> Page Not Found</h2>
+                <div class="error-details">
+                    The page you are looking for was not found.
+                </div>
+                <div class="error-actions" style="margin-top:15px;margin-bottom:15px;">
+                    <a href="/index" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <%- include('../../yelpCamps/yelpCampPartials/footer.ejs') %>
+  </body>
+</html>

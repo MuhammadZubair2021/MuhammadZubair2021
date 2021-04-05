@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title> EJS Practice </title>
+    </head>
+    <body>
+        <h1>You searched for : <%= data.passedItem %> <br> Users List is : <br> </h1>
+        <ol>
+            <% data.passedArray.forEach(function(item){   if(item.length > 0) { %>
+              <li><%= item %> </li><br>
+            <% }})%>
+
+        </ol>  
+
+        <form action="/newCourse" method="POST">
+            <label for="name">Course Name: </label>
+            <input type="text" name="name">             
+            <button type="submit">Add Course</button>
+        </form>
+
+    </body>
+</html>

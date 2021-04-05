@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Server Checking</title>
+	<link rel="stylesheet" type="text/css" href="public/main.css">
+</head>
+<body>
+<!-- To embed java script in HTML (EJS) file you need to use EJS syntax which is (<%= %>) and all the java script will go insiide of percents (%). And we will be able to write regular java script
+Note that: If we use equal sign (=) after stargin percent sign(%) then it mean that firt we want to perform java script operation then want to show those porcess result on browser screen but if we do not use equal sign (=) after stargin percent sign(%) then it mean that our java script content will not be displayed on browser screen -->
+
+<!-- Let create a variable to store passed data, so searchThing will be our variable  -->
+<h1>You Searched for:  <%= data.searchedThing %></h1>
+
+<ol>
+	<!-- Now lets add little more functionality to check user is logged in or not -->
+	<% if(data.loggedIn) { %>
+		<h2>You are logged In as : <%= data.username %> So books is : </h2>
+
+	<% data.passedBookArray.forEach(function(items){ %>
+		<li> <%= items %> </li>
+<% }) %>
+
+<% } %> <!-- Ending of if(condition) body -->
+</ol>
+
+</body>
+</html>

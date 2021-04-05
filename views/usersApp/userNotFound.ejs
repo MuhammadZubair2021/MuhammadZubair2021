@@ -1,0 +1,26 @@
+<html>
+    <%- include('../../usersAppPartials/header.ejs') %>
+    <body>
+        <%- include('../../usersAppPartials/nav.ejs') %>
+        <div style="height:65%;height: 65%;text-align: center;padding-top: 2%;padding-bottom: 0;">
+                <h1 style="font-size: 1rem;">Please Sign In </h1>
+                
+                <form action="/checkUser" method="POST">                 
+                    <input type="text" name="email" placeholder="Your Email" style="margin: 1%;padding: 1%;text-align: center;border-radius: 19px;font-size: 1.5rem;"> <br>                   
+                    <button style="padding: 1% 2%;font-size: 1rem;border-radius: 16px;letter-spacing: 0.2rem;font-weight: bold;font-family: system-ui;word-spacing: 1rem;">
+                        SIGN IN
+                    </button>
+
+                    <!-- Show an error if user not found -->
+                    <p><%= errorText %></p>
+
+                    <a href="/registration" style="padding: 0% 0.5%;font-size: 1rem;text-decoration: none;    border: 2px solid darkslategray;margin-left: 3%;border-radius: 16px;letter-spacing: 0.2rem;font-weight: bold;font-family: system-ui;word-spacing: 1rem;">
+                        SIGN UP
+                    </a>
+                </form>
+                
+               
+        </div>       
+        <%- include('../../usersAppPartials/footer.ejs') %>
+    </body>        
+</html>

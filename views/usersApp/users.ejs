@@ -1,0 +1,39 @@
+<html>
+    <%- include('../../usersAppPartials/header.ejs') %>
+    <body>
+        <%- include('../../usersAppPartials/nav.ejs') %>
+
+        <div style="height: 65%; text-align: center;">
+            <h1>Registered Users:</h1> <br><br> 
+
+            <table style="padding: 1%;">
+                    <th style="padding: 1% 2% 0 0;">
+                        Name
+                    </th>
+                    <th style="padding: 1% 2% 0 0;">
+                        Email Address
+                    </th>
+                    <th style="padding: 1% 2% 0 0;">
+                        Message
+                    </th>
+                </tr>
+                <% usersArray.forEach(users=>{%>
+                    <tr>
+                        <td style="padding: 1% 0 0 0;">
+                            <%= users.name %>
+                        </td>
+                        <td style="padding: 1% 1% 0 3%;">
+                            <%= users.email %>
+                        </td>
+                        <td style="padding: 1% 2% 0 6%;">
+                            <%= users.message %>
+                        </td>
+                    </tr>
+                <%})%>                               
+            </table>               
+        </div>   
+
+        <%- include('../../usersAppPartials/footer.ejs') %>
+
+    </body>        
+</html>

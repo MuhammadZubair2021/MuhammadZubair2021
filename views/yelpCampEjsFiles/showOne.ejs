@@ -1,0 +1,75 @@
+<%- include('../../yelpCamps/yelpCampPartials/head.ejs') %>
+<body>
+
+  <%- include('../../yelpCamps/yelpCampPartials/navbar.ejs') %>
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-3">
+        <p class="lead">
+          YelpCamps
+        </p>
+        <div class="list-group">
+          <li class="list-group-item">
+            Info 1
+          </li>
+          <li class="list-group-item active">
+            Info 2
+          </li>
+          <li class="list-group-item">
+            Info 3
+          </li>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="thumbnail">
+          <img src="<%=campground.imgUrl %>" alt="Image" class="img-responsive" style="width: 100%;">
+          <div class="caption-full py-3">
+            <h4 class="text-right" style="display: inline;">
+              <a href="" style="text-decoration: none;"> <%= campground.campgroundName %> </a>
+            </h4>             
+            <h4 style="display: inline; float: right;">
+              4000 PKR
+            </h4>                                   
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Minus assumenda quisquam laborum velit provident deleniti at asperiores accusantium 
+            quasi recusandae, amet ullam iure! Laborum, quibusdam. Beatae odit odio doloribus. 
+            Reprehenderit.
+          </p>
+          <p>
+            created by <%=campground.author.username%>
+          </p>
+        </div>
+        <div class="p-3 mb-2 bg-light text-dark">          
+            <a href="/campgrounds/<%=campground._id %>/newComment" type="button" style="float: right;" class="btn btn-md btn-success float-right">Add Comment</a>          
+            <br><br><br>
+          <% campground.comments.forEach((comment)=>{ %>
+            <div class="row">
+              <div class="col-md-12">
+                <strong>
+                  <%= comment.author.username %>
+                </strong>
+                <span style="float:right;">10 days ago</span>
+                <p>
+                  <%= comment.text %>           
+                </p>
+              </div>
+            </div>                         
+          <% }) %>      
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">                
+    
+    
+  </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <%- include('../../yelpCamps/yelpCampPartials/footer.ejs') %>
+  </body>
+</html>
