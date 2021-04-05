@@ -1,0 +1,19 @@
+<html>
+    <%- include('../../partials/header.ejs')%>
+
+    <body>
+        <h1>Here you can Update <%=fullBlog.title %> <br> fell free to go... <br> </h1>
+  
+        <form action="/create-blog" method="POST">            
+            <input type="text" name="title" value="<%= fullBlog.title%>"> <br>
+            
+            <input type="text" name="snippet" value="<%= fullBlog.title%>"> <br>
+                        
+            <input type="text" name="body" value="<%= fullBlog.title%>"> <br>
+            
+            <button>UPDATE</button>
+        </form>
+
+        <%- include('../../partials/footer.ejs')%>
+    </body>
+</html>

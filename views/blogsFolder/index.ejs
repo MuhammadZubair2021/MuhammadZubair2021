@@ -1,0 +1,32 @@
+<html>
+    <%- include('../../partials/header.ejs')%>
+
+    <body>
+        <h1>This is the index page of the blogs app <br> Blogs are <br> </h1>
+        <ol>
+            <% sentBlogs.forEach(function(item){%>
+            <li>
+                <a href="/blogs/<%= item._id%>">                    
+                    <%= item.title %>  <br>
+                    <%= item.snippet %>  <br>
+                    <%= item.body %>
+                </a>                  
+            </li>          
+            <%})%>
+        </ol>
+        <form action="/create-blog" method="POST">
+            <label for="title"> Title:</label> <br>
+            <input type="text" name="title"> <br>
+
+            <label for="snippet"> Snippet:</label> <br>
+            <input type="text" name="snippet"> <br>
+            
+            <label for="body"> Body:</label> <br>
+            <input type="text" name="body"> <br>
+            
+            <button>submit</button>
+        </form>
+
+        <%- include('../../partials/footer.ejs')%>
+    </body>
+</html>
